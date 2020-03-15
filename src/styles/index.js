@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import "./fonts.css"
 
-const click = "#C7CCD0"
 const font = "Neucha"
 
 export const Container = styled.div`

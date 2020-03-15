@@ -78,8 +78,24 @@ useEffect(() => {
     })
     API.getFiveDay(res.data.id)
     .then(fiveday => {
-      console.log(fiveday)
+      addFiveDay(fiveday)
     })
+  }
+
+  const addFiveDay = (fiveday) => {
+    console.log(fiveday)
+    const dayArray = []
+    for (let i = 7; i <= 39; i += 8) {
+      dayArray.push({
+        temp: fiveday.data.list[i].main.temp,
+        humidity: fiveday.data.list[i].main.humidity,
+        humidity: fiveday.data.list[i].main.humidity,
+        icon: fiveday.data.list[i].weather[0].icon,
+        description: fiveday.data.list[i].weather[0].description,
+        dt: fiveday.data.list[i].dt
+      })
+    }
+    setFiveDay(dayArray)
   }
 
   const handleSubmit = (query) => {
@@ -90,14 +106,18 @@ useEffect(() => {
     })
   }
 
-  const handleFavorite = () => {
-
+  const handleFavorite = (query) => {
+    API.search(query)
+    .then (res => {
+      console.log(res.data)
+      runSearch(res)
+    })
   }
   return (
     <>
     <Header />
     <Container>
-    <DayContext.Provider value={{currentDay, handleSubmit}}>
+    <DayContext.Provider value={{currentDay, fiveDay, handleSubmit, handleFavorite}}>
     <Sidebar />
     <div>
     <Main />

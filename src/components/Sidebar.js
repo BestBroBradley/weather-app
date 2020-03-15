@@ -10,7 +10,7 @@ const Sidebar = () => {
         <Searchbar />
         <hr/>
         <br/>
-        <h2>Click on your past searches below:</h2>
+        <h2>Check out your favorites below:</h2>
         <History />
         </SidebarWrapper>
     )

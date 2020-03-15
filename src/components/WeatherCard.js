@@ -1,15 +1,22 @@
 import React from 'react'
+import moment from 'moment'
 import { CardWrapper } from '../styles'
 
-const WeatherCard = () => {
+const WeatherCard = (props) => {
+    const date = moment.unix(props.data.dt).format("LL")
+    const day = moment.unix(props.data.dt).format("dddd")
+    const icon = `http://openweathermap.org/img/w/${props.data.icon}.png`
+    const description = props.data.description
+
     return (
         <CardWrapper>
-            <h2>Jan 2, 2020</h2>
-            <h2>Monday</h2>
+            <h2>{date}</h2>
+            <h2>{day}</h2>
+            <h3>{parseInt(props.data.temp)}° F</h3>
             <hr />
-            <img alt="placeholder" href='#' />
-            <h3>Temp: 33 F</h3>
-            <h3>Humidity: 33%</h3>
+            <img alt={props.data.description} src={icon} />
+            <h4>{description}</h4>
+            <h3>Humidity: {props.data.humidity}%</h3>
         </CardWrapper>
     )
 }

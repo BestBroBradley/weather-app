@@ -7,8 +7,6 @@ const CurrentDay = () => {
 
     const { currentDay } = useContext(DayContext)
 
-    console.log(currentDay)
-
     const icon = `http://openweathermap.org/img/w/${currentDay.icon}.png`
 
     const date = moment.unix(currentDay.dt).format("dddd, LL");
@@ -17,7 +15,7 @@ const CurrentDay = () => {
         <div>
             <div>
                 <CurrentWrapper>
-                    <img src={icon} />
+                    <img alt={currentDay.description} src={icon} />
                     <div>
                         <h1>Today is {date}.</h1>
                         <h1>It's currently {currentDay.temp}° F in {currentDay.city}.</h1>
