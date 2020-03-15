@@ -60,38 +60,49 @@ useEffect(() => {
     API.search("denver")
     .then (res => {
       console.log(res.data)
-      setCurrentDay({
-        ...currentDay,
-        city: res.data.name,
-        temp: parseInt(res.data.main.temp),
-        high: parseInt(res.data.main.temp_max),
-        low: parseInt(res.data.main.temp_min),
-        humidity: res.data.main.humidity,
-        description: res.data.weather[0].main,
-        icon: res.data.weather[0].icon,
-        dt: (res.data.dt)
-      })
-      API.getFiveDay(res.data.id)
-      .then(fiveday => {
-        updateDay(fiveday.data)
-      })
+      runSearch(res)
     })
   }, []);
 
-  const updateDay = (data) => {
-
+  const runSearch = (res) => {
+    setCurrentDay({
+      ...currentDay,
+      city: res.data.name,
+      temp: parseInt(res.data.main.temp),
+      high: parseInt(res.data.main.temp_max),
+      low: parseInt(res.data.main.temp_min),
+      humidity: res.data.main.humidity,
+      description: res.data.weather[0].main,
+      icon: res.data.weather[0].icon,
+      dt: (res.data.dt)
+    })
+    API.getFiveDay(res.data.id)
+    .then(fiveday => {
+      console.log(fiveday)
+    })
   }
 
+  const handleSubmit = (query) => {
+    API.search(query)
+    .then (res => {
+      console.log(res.data)
+      runSearch(res)
+    })
+  }
+
+  const handleFavorite = () => {
+
+  }
   return (
     <>
     <Header />
     <Container>
+    <DayContext.Provider value={{currentDay, handleSubmit}}>
     <Sidebar />
     <div>
-    <DayContext.Provider value={{currentDay}}>
     <Main />
-    </DayContext.Provider>
     </div>
+    </DayContext.Provider>
     </Container>
     </>
   );

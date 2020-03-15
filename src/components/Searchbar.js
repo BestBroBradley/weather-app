@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DayContext } from '../utils/DayContext'
 
 const Searchbar = () => {
+
+const { handleSubmit } = useContext(DayContext)
+
+
+const submit = (event => {
+    event.preventDefault()
+    const query = document.getElementById("query").value
+    if (query) {
+        handleSubmit(query)
+    } else {
+        alert("Search cannot be blank.")
+    }
+})
 
     return (
         <div id="search-box">
         <form>
-            <input placeholder="Search for a city..."/>
-            <button id="search-button">Search Once</button>
+            <input id="query" placeholder="Search for a city..."/>
+            <button onClick={submit} id="search-button">Search Once</button>
             <br/>
             <button id="favorites-button">Add to Favorites</button>
         </form>
