@@ -4,7 +4,8 @@ import { DayContext } from '../utils/DayContext'
 
 const History = () => {
 
-const { btnArray, renderButtons } = useContext(DayContext)
+const { btnArray, renderButtons, handleClick } = useContext(DayContext)
+
 
     return (
         <>

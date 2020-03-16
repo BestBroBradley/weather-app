@@ -100,7 +100,7 @@ useEffect(() => {
     setFiveDay(dayArray)
   }
 
-  const renderButtons = btnArray.map(item => <Button value="item">{item}</Button>)
+  const renderButtons = btnArray.map(item => <Button onClick={() => handleSubmit(item)} value={item}>{item}</Button>)
 
   const handleSubmit = (query) => {
     document.getElementById("query").value = ""
@@ -113,7 +113,7 @@ useEffect(() => {
   const handleFavorite = (query) => {
     API.search(query)
     .then (res => {
-      if (res) {
+      if (res && !btnArray.includes(res.data.name)) {
       console.log(res.data.name)
       btnArray.push(res.data.name)
       document.getElementById("query").value = ""
@@ -124,6 +124,8 @@ useEffect(() => {
       runSearch(res)
     })
   }
+
+
   return (
     <>
     <Header />
