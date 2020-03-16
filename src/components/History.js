@@ -1,24 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button } from '../styles'
+import { DayContext } from '../utils/DayContext'
 
 const History = () => {
+
+const { btnArray, renderButtons } = useContext(DayContext)
+
     return (
         <>
-        <Button>
-            Denver
-        </Button>
-        <Button>
-            Duluth
-        </Button>
-        <Button>
-            Manhattan
-        </Button>
-        <Button>
-            Minneapolis
-        </Button>
-        <Button>
-            Cairo
-        </Button>
+        {renderButtons}
         </>
     )
 }

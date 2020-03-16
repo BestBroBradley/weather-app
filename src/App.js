@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Main from './components/Main'
-import { Container } from './styles'
+import { Container, Button } from './styles'
 import API from './utils/API'
 import { DayContext } from './utils/DayContext'
 
 function App() {
-  
+
+let btnArray = JSON.parse(localStorage.getItem("button array")) || []
+
 const [currentDay, setCurrentDay] = useState ({
   city: "",
   temp: 0,
@@ -98,10 +100,12 @@ useEffect(() => {
     setFiveDay(dayArray)
   }
 
+  const renderButtons = btnArray.map(item => <Button value="item">{item}</Button>)
+
   const handleSubmit = (query) => {
+    document.getElementById("query").value = ""
     API.search(query)
     .then (res => {
-      console.log(res.data)
       runSearch(res)
     })
   }
@@ -109,6 +113,13 @@ useEffect(() => {
   const handleFavorite = (query) => {
     API.search(query)
     .then (res => {
+      if (res) {
+      console.log(res.data.name)
+      btnArray.push(res.data.name)
+      document.getElementById("query").value = ""
+      console.log(btnArray)
+      localStorage.setItem("button array", JSON.stringify(btnArray))
+      }
       console.log(res.data)
       runSearch(res)
     })
@@ -117,7 +128,7 @@ useEffect(() => {
     <>
     <Header />
     <Container>
-    <DayContext.Provider value={{currentDay, fiveDay, handleSubmit, handleFavorite}}>
+    <DayContext.Provider value={{btnArray, renderButtons, currentDay, fiveDay, handleSubmit, handleFavorite}}>
     <Sidebar />
     <div>
     <Main />

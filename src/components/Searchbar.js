@@ -3,7 +3,7 @@ import { DayContext } from '../utils/DayContext'
 
 const Searchbar = () => {
 
-const { handleSubmit } = useContext(DayContext)
+const { handleSubmit, handleFavorite } = useContext(DayContext)
 
 
 const submit = (event => {
@@ -20,7 +20,7 @@ const favorite = (event => {
     event.preventDefault()
     const query = document.getElementById("query").value
     if (query) {
-        handleSubmit(query)
+        handleFavorite(query)
     } else {
         alert("Search cannot be blank.")
     }
