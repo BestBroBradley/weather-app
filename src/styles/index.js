@@ -5,7 +5,7 @@ const font = "Neucha"
 
 export const Container = styled.div`
     display: flex;
-    flex-wrap: flex;
+    flex-wrap: wrap;
     font-family: ${font}
 `
 
@@ -57,6 +57,10 @@ export const SidebarWrapper = styled.div`
         background: sandybrown;
     }
 
+    #clear-button {
+        width: 45%;
+    }
+
     button {
         width: 80%;
     }
@@ -69,6 +73,23 @@ export const Button = styled.button`
     font-size: 1.25rem;
     border: 2px grey solid;
     background: powderblue;
+    border-radius: 12px;
+
+    :hover {
+        color: white;
+    }
+
+    :active {
+        opacity: .3;
+    }
+`
+
+export const ClearButton = styled.button`
+    height: 30px;
+    margin: 5px 10px;
+    font-size: 1rem;
+    border: 2px grey solid;
+    background: yellowgreen;
     border-radius: 12px;
 
     :hover {

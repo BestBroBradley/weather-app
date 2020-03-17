@@ -124,12 +124,11 @@ useEffect(() => {
     })
   }
 
-
   return (
     <>
     <Header />
     <Container>
-    <DayContext.Provider value={{btnArray, renderButtons, currentDay, fiveDay, handleSubmit, handleFavorite}}>
+    <DayContext.Provider value={{btnArray, renderButtons, currentDay, setCurrentDay, fiveDay, handleSubmit, handleFavorite}}>
     <Sidebar />
     <div>
     <Main />
