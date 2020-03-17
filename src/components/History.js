@@ -1,11 +1,9 @@
 import React, { useContext } from 'react'
-import { Button } from '../styles'
 import { DayContext } from '../utils/DayContext'
 
 const History = () => {
 
-const { btnArray, renderButtons, handleClick } = useContext(DayContext)
-
+const { renderButtons } = useContext(DayContext)
 
     return (
         <>

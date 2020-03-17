@@ -91,7 +91,6 @@ useEffect(() => {
       dayArray.push({
         temp: fiveday.data.list[i].main.temp,
         humidity: fiveday.data.list[i].main.humidity,
-        humidity: fiveday.data.list[i].main.humidity,
         icon: fiveday.data.list[i].weather[0].icon,
         description: fiveday.data.list[i].weather[0].description,
         dt: fiveday.data.list[i].dt
