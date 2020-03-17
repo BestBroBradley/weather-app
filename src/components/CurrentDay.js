@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import moment from 'moment'
 import { DayContext } from '../utils/DayContext'
-import { CurrentWrapper } from '../styles'
+import { CurrentWrapper, CurrentDetails } from '../styles'
 
 const CurrentDay = () => {
 
@@ -23,9 +23,11 @@ const CurrentDay = () => {
                 </CurrentWrapper>
             </div>
             <hr />
+            <CurrentDetails>
             <h3>High: {currentDay.high}° F</h3>
             <h3>Low: {currentDay.low}° F</h3>
             <h3>Humidity: {currentDay.humidity}%</h3>
+            </CurrentDetails>
         </div>
         <br />
         </>

@@ -108,6 +108,16 @@ export const CurrentWrapper = styled.div`
         width: 120px;
         height: auto;
     }
+
+    @media only screen and (max-width: 600px) {
+
+      }
+`
+
+export const CurrentDetails = styled.div`
+    @media only screen and (max-width: 700px) {
+        text-align: center;
+    }
 `
 
 export const WeekWrapper = styled.div`
@@ -117,8 +127,14 @@ export const WeekWrapper = styled.div`
 
 export const CardWrapper = styled.div`
     text-align: center;
-    border: 3px grey solid;
+    border: 3px solid grey;
     width: 165px;
     padding: 10px;
     margin: 10px;
+
+    @media only screen and (max-width: 600px) {
+        width: 90%;
+        border: 7px dotted lightcoral;
+    }
+    
 `

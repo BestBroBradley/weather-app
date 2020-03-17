@@ -61,7 +61,6 @@ const [fiveDay, setFiveDay] = useState ([
 useEffect(() => {
     API.search("denver")
     .then (res => {
-      console.log(res.data)
       runSearch(res)
     })
   }, []);
@@ -85,7 +84,6 @@ useEffect(() => {
   }
 
   const addFiveDay = (fiveday) => {
-    console.log(fiveday)
     const dayArray = []
     for (let i = 7; i <= 39; i += 8) {
       dayArray.push({
@@ -113,13 +111,10 @@ useEffect(() => {
     API.search(query)
     .then (res => {
       if (res && !btnArray.includes(res.data.name)) {
-      console.log(res.data.name)
       btnArray.push(res.data.name)
       document.getElementById("query").value = ""
-      console.log(btnArray)
       localStorage.setItem("button array", JSON.stringify(btnArray))
       }
-      console.log(res.data)
       runSearch(res)
     })
   }
