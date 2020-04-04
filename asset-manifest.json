@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/weather-buddy/static/css/main.21c20a07.chunk.css",
+    "main.js": "/weather-buddy/static/js/main.21173181.chunk.js",
+    "main.js.map": "/weather-buddy/static/js/main.21173181.chunk.js.map",
+    "runtime-main.js": "/weather-buddy/static/js/runtime-main.55792872.js",
+    "runtime-main.js.map": "/weather-buddy/static/js/runtime-main.55792872.js.map",
+    "static/js/2.d048d77b.chunk.js": "/weather-buddy/static/js/2.d048d77b.chunk.js",
+    "static/js/2.d048d77b.chunk.js.map": "/weather-buddy/static/js/2.d048d77b.chunk.js.map",
+    "index.html": "/weather-buddy/index.html",
+    "precache-manifest.55c1c00a7e6784294adef35ce5c118b6.js": "/weather-buddy/precache-manifest.55c1c00a7e6784294adef35ce5c118b6.js",
+    "service-worker.js": "/weather-buddy/service-worker.js",
+    "static/css/main.21c20a07.chunk.css.map": "/weather-buddy/static/css/main.21c20a07.chunk.css.map",
+    "static/js/2.d048d77b.chunk.js.LICENSE.txt": "/weather-buddy/static/js/2.d048d77b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55792872.js",
+    "static/js/2.d048d77b.chunk.js",
+    "static/css/main.21c20a07.chunk.css",
+    "static/js/main.21173181.chunk.js"
+  ]
+}
