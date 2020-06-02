@@ -4,7 +4,7 @@ This project uses the Open Weather API to allow a user to search for weather in 
 
 [https://bbb-weather-buddy.herokuapp.com/](https://bbb-weather-buddy.herokuapp.com/)
 
-![Screenshot of app](screenshot.png)
+![Screenshot of app](/public/screenshot.png)
 
 Each search yields the current weather for that location, as well as the five-day forecast for that location.  Details include temp, humidity, and a text description of the weather.
 
