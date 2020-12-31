@@ -87,7 +87,7 @@ export const Button = styled.button`
 export const ClearButton = styled.button`
     height: 30px;
     margin: 5px 10px;
-    font-size: 1rem;
+    font-size: .5rem;
     border: 2px grey solid;
     background: yellowgreen;
     border-radius: 12px;
