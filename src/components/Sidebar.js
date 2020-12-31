@@ -26,7 +26,7 @@ const handleClear = () => {
         <br/>
         {btnArray.length !== 0 ? (<h2>Check out your favorites below:</h2>) : (<h2>Use the "Add to Favorites" button to start your favorites list!</h2>)}
         <History />
-        {btnArray.length !== 0 ? (<div><ClearButton onClick={handleClear} id="clear-button">Clear your Favorites</ClearButton></div>) : null}
+        {btnArray.length !== 0 ? (<div><ClearButton onClick={handleClear} id="clear-button">Clear Favorites</ClearButton></div>) : null}
         </SidebarWrapper>
     )
 }
